@@ -10,12 +10,23 @@ namespace Assets.Game.Scripts
     {
         [SerializeField] private TextMeshProUGUI _answerTextUI;
         [SerializeField] private Button _answerButton;
+
+        private int _answerIndex;
         private bool _isСorrect;
-        public event Action<bool> OnClick;
 
-        public void Init(string answerText)
+        public event Action<bool, int> OnClickAction;
+
+        public void Init(AnswerModel answerModel, int index)
         {
+            _answerTextUI.text = answerModel.AnswerText;
+            _answerIndex = index;
+            _answerButton.onClick.AddListener(AnswerClick);
+            
+        }
 
+        private void AnswerClick()
+        {
+            OnClickAction?.Invoke(_isСorrect, _answerIndex);
         }
     }
 }
