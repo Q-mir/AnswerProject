@@ -38,3 +38,6 @@ public class QuizPanel : MonoBehaviour
         Debug.Log($"QuizPanel: нажал кнопку с индексом {index} ");
     }
 }
+
+
+
