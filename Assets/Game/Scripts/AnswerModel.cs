@@ -11,11 +11,11 @@ namespace Assets.Game.Scripts
         public AnswerModel(string answerText, bool isCorrect)
         {
             AnswerText = answerText;
-            this.isCorrect = isCorrect;
+            this.IsCorrect = isCorrect;
         }
 
         public string AnswerText { get; }
-        public bool isCorrect { get; }
+        public bool IsCorrect { get; }
 
     }
 }
