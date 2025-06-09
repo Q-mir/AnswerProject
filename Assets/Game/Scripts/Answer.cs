@@ -16,8 +16,9 @@ namespace Assets.Game.Scripts
 
         public event Action<bool, int> OnClickAction;
 
-        public void Init(AnswerModel answerModel, int index)
+        public void Init(AnswerModel answerModel, int index, Action<bool,int> OnSelectAnswer)
         {
+            OnClickAction = OnSelectAnswer;
             _answerTextUI.text = answerModel.AnswerText;
             _answerIndex = index;
             _answerButton.onClick.AddListener(AnswerClick);

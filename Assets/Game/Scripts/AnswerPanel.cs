@@ -9,14 +9,14 @@ namespace Assets.Game.Scripts
         private Answer[] _answers;
 
         public event Action<bool, int> AnswerAdded;
-        public void Init(AnswerModel[] answersModels)
+        public void Init(AnswerModel[] answersModels, Action<bool, int> OnSelectAnswer)
         {
             _answers = transform.GetComponentsInChildren<Answer>();
 
             for (int i = 0; i < _answers.Length; i++)
             {
-                _answers[i].Init(answersModels[i], i);
-                _answers[i].OnClickAction += Click;
+                Answer currentElement = _answers[i];
+                currentElement.Init(answersModels[i], i, OnSelectAnswer);
             }
 
         }
@@ -25,13 +25,5 @@ namespace Assets.Game.Scripts
         {
             AnswerAdded?.Invoke(isCorrect, index);
         }
-
-
-
-        
-
-
-        
-
     }
 }

@@ -10,7 +10,7 @@ public class QuizPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _questionTextUI;
     [SerializeField] private Image _questionImage;
     [SerializeField] private AnswerPanel _answerPanel;
-    public event Action<int, bool> OnSelectAnswer;
+    public event Action<bool, int> OnSelectAnswer;
     public void Init()
     {
         OnSelectAnswer += SelectAnswer;
@@ -20,10 +20,10 @@ public class QuizPanel : MonoBehaviour
         arr[1] = new AnswerModel("Two", false);
         arr[2] = new AnswerModel("Three", false);
 
-        _answerPanel.Init(arr);
+        _answerPanel.Init(arr, OnSelectAnswer);
     }
 
-    private void SelectAnswer(int arg1, bool arg2)
+    private void SelectAnswer(bool arg1, int arg2)
     {
         Debug.Log($"Select {arg1} : {arg2}");
     }
