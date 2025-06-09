@@ -1,4 +1,5 @@
 using Assets.Game.Scripts;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,8 +10,10 @@ public class QuizPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _questionTextUI;
     [SerializeField] private Image _questionImage;
     [SerializeField] private AnswerPanel _answerPanel;
+    public event Action<int, bool> OnSelectAnswer;
     public void Init()
     {
+        OnSelectAnswer += SelectAnswer;
         _answerPanel.AnswerAdded += ShowDebug;
         var arr = new AnswerModel[3];
         arr[0] = new AnswerModel("One", true);
@@ -18,6 +21,11 @@ public class QuizPanel : MonoBehaviour
         arr[2] = new AnswerModel("Three", false);
 
         _answerPanel.Init(arr);
+    }
+
+    private void SelectAnswer(int arg1, bool arg2)
+    {
+        Debug.Log($"Select {arg1} : {arg2}");
     }
 
     private void Start()
