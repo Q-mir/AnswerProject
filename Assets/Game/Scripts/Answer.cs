@@ -22,7 +22,7 @@ namespace Assets.Game.Scripts
             _answerTextUI.text = answerModel.AnswerText;
             _answerIndex = index;
             _answerButton.onClick.AddListener(AnswerClick);
-            
+            _isСorrect = answerModel.isCorrect;
         }
 
         private void AnswerClick()
