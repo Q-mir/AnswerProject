@@ -16,6 +16,7 @@ public class QuizPanel : MonoBehaviour
     public event Action<bool, int> OnSelectAnswer;
     public void Init(QuizPanelModel quizPanelModel)
     {
+        OnSelectAnswer = null;
         OnSelectAnswer += SelectAnswer;
         QuizPanelModel = quizPanelModel;
         _levelTextUI.text = quizPanelModel.Leveltext;
@@ -28,6 +29,7 @@ public class QuizPanel : MonoBehaviour
     private void SelectAnswer(bool arg1, int arg2)
     {
         Debug.Log($"Select {arg1} : {arg2}");
+        _answerPanel.Disable();
     }
 
     private void Start()

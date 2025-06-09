@@ -8,7 +8,7 @@ namespace Assets.Game.Scripts
     {
         private Answer[] _answers;
 
-        public event Action<bool, int> AnswerAdded;
+        
         public void Init(AnswerModel[] answersModels, Action<bool, int> OnSelectAnswer)
         {
             _answers = transform.GetComponentsInChildren<Answer>();
@@ -21,9 +21,12 @@ namespace Assets.Game.Scripts
 
         }
 
-        public void Click(bool isCorrect, int index)
+        public void Disable()
         {
-            AnswerAdded?.Invoke(isCorrect, index);
+            for (int i = 0; i < _answers.Length; i++)
+            {
+                _answers[i].Disable();
+            }
         }
     }
 }

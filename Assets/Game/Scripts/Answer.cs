@@ -29,5 +29,10 @@ namespace Assets.Game.Scripts
         {
             OnClickAction?.Invoke(_isСorrect, _answerIndex);
         }
+
+        public void Disable()
+        {
+            _answerButton?.onClick.RemoveAllListeners();
+        }
     }
 }
