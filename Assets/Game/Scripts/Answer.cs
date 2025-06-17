@@ -1,38 +1,32 @@
-﻿using System;
-using System.Collections;
-using TMPro;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
+using System;
+using TMPro;
 
-namespace Assets.Game.Scripts
-{
-    public class Answer : MonoBehaviour
-    {
-        [SerializeField] private TextMeshProUGUI _answerTextUI;
-        [SerializeField] private Button _answerButton;
+public class Answer : MonoBehaviour {
+    [SerializeField] private TextMeshProUGUI _answerTextUI;
+    [SerializeField] private Button _button;
 
-        private int _answerIndex;
-        private bool _isСorrect;
+    private AnswerModel _answerModel;
+    private bool _isCorrect;
+    private int _index;
 
-        public event Action<bool, int> OnClickAction;
+    private event Action<int, bool> OnClick;
 
-        public void Init(AnswerModel answerModel, int index, Action<bool,int> OnSelectAnswer)
-        {
-            OnClickAction = OnSelectAnswer;
-            _answerTextUI.text = answerModel.AnswerText;
-            _answerIndex = index;
-            _answerButton.onClick.AddListener(AnswerClick);
-            _isСorrect = answerModel.IsCorrect;
-        }
+    public void Init(AnswerModel answerModel, int i, Action<int, bool> onSelectAnswer) {
+        OnClick = onSelectAnswer;
+        _index = i;
+        _answerModel = answerModel;
+        _answerTextUI.text = _answerModel.AnswerText;
+        _isCorrect = _answerModel.IsCorrect;
+        _button.onClick.AddListener(ButtonClick);
+    }
 
-        private void AnswerClick()
-        {
-            OnClickAction?.Invoke(_isСorrect, _answerIndex);
-        }
+    private void ButtonClick() {
+        OnClick?.Invoke(_index, _isCorrect);
+    }
 
-        public void Disable()
-        {
-            _answerButton?.onClick.RemoveAllListeners();
-        }
+    public void Disable() {
+        _button.onClick.RemoveAllListeners();
     }
 }

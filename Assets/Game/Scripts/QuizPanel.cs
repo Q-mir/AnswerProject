@@ -1,52 +1,29 @@
-using Assets.Game.Scripts;
-using System;
-using System.Runtime.CompilerServices;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
+using System;
+using TMPro;
 
-public class QuizPanel : MonoBehaviour
-{
-    [SerializeField] private TextMeshProUGUI _levelTextUI;
-    [SerializeField] private TextMeshProUGUI _questionTextUI;
-    [SerializeField] private Image _questionImage;
+public class QuizPanel : MonoBehaviour {
+    [SerializeField] private TextMeshProUGUI _levelLabelTextUI;
+    [SerializeField] private TextMeshProUGUI _quizQuestionTextUI;
+    [SerializeField] private Image _questionImageUI;
     [SerializeField] private AnswerPanel _answerPanel;
-    private QuizPanelModel QuizPanelModel;
-    public event Action<bool, int> OnSelectAnswer;
-    public void Init(QuizPanelModel quizPanelModel)
-    {
-        OnSelectAnswer = null;
+    public event Action<int, bool> OnSelectAnswer;
+
+    public void Init(QuizPanelModel quizPanelModel) {
         OnSelectAnswer += SelectAnswer;
-        QuizPanelModel = quizPanelModel;
-        _levelTextUI.text = quizPanelModel.Leveltext;
-        _questionTextUI.text = quizPanelModel.QuestionText;
-        _questionImage.sprite = quizPanelModel.AnswerImage;
-        _answerPanel.Init(quizPanelModel.Answers, OnSelectAnswer);
+        _levelLabelTextUI.text = $"Level {quizPanelModel.LevelIndex + 1}";
+        _quizQuestionTextUI.text = quizPanelModel.QuestionText;
+        _questionImageUI.sprite = quizPanelModel.Sprite;
+        _answerPanel.Init(quizPanelModel.AnswerModels, OnSelectAnswer);
     }
 
-    
-    private void SelectAnswer(bool arg1, int arg2)
-    {
-        Debug.Log($"Select {arg1} : {arg2}");
-        _answerPanel.Disable();
+    private void SelectAnswer(int arg1, bool arg2) {
+        OnSelectAnswer = null;
+        _answerPanel.DisableButton();
+        Debug.Log($"Secelt {arg1},{arg2}");
     }
-
-    private void Start()
-    {
-        AnswerModel[] answer = new AnswerModel[3];
-        answer[0] = new AnswerModel("Answer 1", true);
-        answer[1] = new AnswerModel("Answer 2", false);
-        answer[2] = new AnswerModel("Answer 3", false);
-
-
-
-        QuizPanelModel quizPanelModel = new("Level 11", "Answer 1", null, answer);
-        Init(quizPanelModel);
-    }
-
-    
 }
 
 
-
+//Заблокировать нажатия на кнопку, при нажатии на любую кнопку

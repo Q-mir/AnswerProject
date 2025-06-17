@@ -1,21 +1,28 @@
-﻿using System.Collections;
+using System.Collections.Generic;
+using Game.Quiz.Scripts;
+using System.Linq;
 using UnityEngine;
 
-namespace Assets.Game.Scripts
-{
-    public class QuizPanelModel
-    {
-        public string Leveltext { get; }
-        public string QuestionText { get; }
-        public Sprite AnswerImage { get; }
-        public AnswerModel[] Answers { get; }
+public class QuizPanelModel {
+    public string QuestionText { get; }
+    public int LevelIndex { get; }
+    public Sprite Sprite { get; }
+    public AnswerModel[] AnswerModels { get; }
 
-        public QuizPanelModel(string leveltext, string questionText, Sprite answerImage, AnswerModel[] answers)
-        {
-            this.Leveltext = leveltext;
-            this.QuestionText = questionText;
-            this.AnswerImage = answerImage;
-            this.Answers = answers;
-        }
+    public QuizPanelModel(
+        string questionText,
+        int levelIndex,
+        Sprite sprite,
+        AnswerModel[] answerModels
+    ) {
+        QuestionText = questionText;
+        LevelIndex = levelIndex;
+        Sprite = sprite;
+        AnswerModels = answerModels;
     }
+
+    
 }
+
+
+//Написать класс который будет создавать QuizPanelModel на основе конфига

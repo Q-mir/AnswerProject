@@ -1,32 +1,22 @@
-﻿using System;
-using System.Collections;
 using UnityEngine;
+using System;
 
-namespace Assets.Game.Scripts
-{
-    public class AnswerPanel : MonoBehaviour
-    {
-        private Answer[] _answers;
+public class AnswerPanel : MonoBehaviour {
+    private Answer[] _answers;
 
-        
-        public void Init(AnswerModel[] answersModels, Action<bool, int> OnSelectAnswer)
-        {
-            _answers = transform.GetComponentsInChildren<Answer>();
+    public void Init(AnswerModel[] answers, Action<int, bool> onSelectAnswer) {
+        _answers = transform.GetComponentsInChildren<Answer>();
 
-            for (int i = 0; i < _answers.Length; i++)
-            {
-                Answer currentElement = _answers[i];
-                currentElement.Init(answersModels[i], i, OnSelectAnswer);
-            }
-
+        for (int i = 0; i < _answers.Length; i++) {
+            Answer currentElement = _answers[i];
+            currentElement.Init(answers[i], i, onSelectAnswer);
         }
+    }
 
-        public void Disable()
-        {
-            for (int i = 0; i < _answers.Length; i++)
-            {
-                _answers[i].Disable();
-            }
+    public void DisableButton() {
+        for (int i = 0; i < _answers.Length; i++) {
+            Answer currentElement = _answers[i];
+            currentElement.Disable();
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using Assets.Game.Config;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Game.Quiz.Scripts;
 
 namespace Assets.Game.Scripts
 {
@@ -12,7 +7,7 @@ namespace Assets.Game.Scripts
         
         private QuizPanelModel _quizPanelModel;
 
-        public QuizPanelGenerator(QuizElementCongif quizElementConfig, int level)
+        public QuizPanelGenerator(QuizElementConfig quizElementConfig, int level)
         {
             AnswerModel[] answersModel = new AnswerModel[]
             {
@@ -20,7 +15,7 @@ namespace Assets.Game.Scripts
                 new AnswerModel(quizElementConfig.Answers[1], false),
                 new AnswerModel(quizElementConfig.Answers[2], false)
             };
-            _quizPanelModel = new QuizPanelModel($"Level {level}", quizElementConfig.QuestionText, quizElementConfig.QuestionImage, answersModel);
+            _quizPanelModel = new QuizPanelModel($"Level {level}", level, quizElementConfig.QuestionSprite, answersModel);
         }
         public QuizPanelModel GetQuizPanel() => _quizPanelModel;
         

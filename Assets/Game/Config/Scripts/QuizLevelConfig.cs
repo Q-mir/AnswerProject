@@ -1,20 +1,15 @@
-﻿using Assets.Game.Scripts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Game.Config
-{
+namespace Game.Quiz.Scripts {
     [CreateAssetMenu(fileName = "QuizLevelConfig", menuName = "MySo/Quiz/QuizLevelConfig")]
-    public class QuizLevelConfig : ScriptableObject
-    {
-        [field: SerializeField] private QuizElementCongif[] _quizElementCongifs;
-        public QuizElementCongif GetElementCongifByIndex(int index)
-        {
-            return _quizElementCongifs[index];
+    public class QuizLevelConfig : ScriptableObject {
+        [SerializeField] private QuizElementConfig[] _quizElementConfigs;
+        public int QuizElementConfigsCount => _quizElementConfigs.Length;
+
+        public QuizElementConfig GetElementByIndex(int index) {
+            return _quizElementConfigs[index];
         }
     }
 }
+
+//Заполнить левел конфиг 10ю элемент конфигами

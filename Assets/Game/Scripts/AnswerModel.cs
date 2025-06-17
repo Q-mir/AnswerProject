@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+public struct AnswerModel {
+    public string AnswerText { get; private set; }
+    public bool IsCorrect { get; }
 
-namespace Assets.Game.Scripts
-{
-    public struct AnswerModel
-    {
-        public AnswerModel(string answerText, bool isCorrect)
-        {
-            AnswerText = answerText;
-            this.IsCorrect = isCorrect;
-        }
+    public AnswerModel(string answerText, bool isCorrect) {
+        AnswerText = answerText;
+        IsCorrect = isCorrect;
+    }
 
-        public string AnswerText { get; }
-        public bool IsCorrect { get; }
-
+    public void SetAnswerText(string answerText) {
+        AnswerText = answerText;
     }
 }
