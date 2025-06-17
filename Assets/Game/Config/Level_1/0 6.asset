@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 0 6
   m_EditorClassIdentifier: 
   <QuestionText>k__BackingField: Which wonder of the world is shown in the photo?
-  <QuestionImage>k__BackingField: {fileID: 21300000, guid: a6c2ce297969bc948a7abae5b1ebbb97, type: 3}
+  <QuestionImage>k__BackingField: {fileID: 21300000, guid: ee5643c6985b92d4583d39550c946a0d, type: 3}
   <Answers>k__BackingField:
-  - Great Pyramid of Giza
-  - Stonehenge
-  - Mount Everest
+  - Statue of Liberty
+  - Christ the Redeemer
+  - Mount Rushmore

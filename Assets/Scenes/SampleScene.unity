@@ -1218,9 +1218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ce76238c9aa5c4a80a84cc8513a6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelTextUI: {fileID: 0}
-  _questionTextUI: {fileID: 0}
-  _questionImage: {fileID: 0}
+  _levelTextUI: {fileID: 488200478}
+  _questionTextUI: {fileID: 1320309280}
+  _questionImage: {fileID: 1628482729}
   _answerPanel: {fileID: 1097825650}
 --- !u!224 &1026347807 stripped
 RectTransform:

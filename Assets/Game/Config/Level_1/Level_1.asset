@@ -14,3 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _quizElementCongifs:
   - {fileID: 11400000, guid: eab8cfdf831fe9344858e5be8e4ac952, type: 2}
+  - {fileID: 11400000, guid: b99cf224bd500c24c93d064de97e7795, type: 2}
+  - {fileID: 11400000, guid: 85e41edf059d5e343b3f134404dc8db7, type: 2}
+  - {fileID: 11400000, guid: 10c765925470d4543a0a5b1dd1aae385, type: 2}
+  - {fileID: 11400000, guid: bce644023031e494fb5df7851d92765f, type: 2}
+  - {fileID: 11400000, guid: c5de4d047b3f1cb4eb8bfa8b721b9ac8, type: 2}
+  - {fileID: 11400000, guid: 5cddda4142665974d926f3133f906a20, type: 2}
+  - {fileID: 11400000, guid: 9dbefb5d9d4090843ae6d194fe92ccac, type: 2}
+  - {fileID: 11400000, guid: 3db96d96081c72e4eb268714fde9e814, type: 2}
+  - {fileID: 11400000, guid: 44114e34318b7f746968bcc04460f269, type: 2}
