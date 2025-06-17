@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e37ebc2fbd7ac4ebca2f779a3f45c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a937e5c74ba45b4d8b378fd0cd286c3, type: 3}
   m_Name: 0 5
   m_EditorClassIdentifier: 
+  <QuestionSprite>k__BackingField: {fileID: 21300000, guid: a6c2ce297969bc948a7abae5b1ebbb97, type: 3}
   <QuestionText>k__BackingField: Which wonder of the world is shown in the photo?
-  <QuestionImage>k__BackingField: {fileID: 21300000, guid: 09f0670210d695041b8159cde56b75b4, type: 3}
   <Answers>k__BackingField:
-  - Petra
-  - Temple of Artemis
-  - Mausoleum at Halicarnassus
+  - Great Pyramid of Giza
+  - Stonehenge
+  - Mount Everest

@@ -4,6 +4,7 @@ using System;
 using TMPro;
 
 public class Answer : MonoBehaviour {
+
     [SerializeField] private TextMeshProUGUI _answerTextUI;
     [SerializeField] private Button _button;
 

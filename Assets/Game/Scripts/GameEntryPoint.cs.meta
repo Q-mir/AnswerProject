@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 0afaf57d410fa0141bf5136069bf93fe
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - quizLevelConfig: {fileID: 11400000, guid: 833a32252476a1b4a9eb3a8bd44a58a2, type: 2}
+  - quizPanel: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
