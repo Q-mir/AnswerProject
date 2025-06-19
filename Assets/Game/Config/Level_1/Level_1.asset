@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: Level_1
   m_EditorClassIdentifier: 
   _quizElementConfigs:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: eab8cfdf831fe9344858e5be8e4ac952, type: 2}
+  - {fileID: 11400000, guid: f1f08e9b5fe6b9043991f1dca3935061, type: 2}
+  - {fileID: 11400000, guid: 8733e6e5b6639d74abf6fa153779a2ad, type: 2}
+  - {fileID: 11400000, guid: 3abe8622ab404844b82800b720e203b5, type: 2}
+  - {fileID: 11400000, guid: e040c0a0e98e8c34bb3fbefa79f9bfac, type: 2}
+  - {fileID: 11400000, guid: c80c0be273544984bb896628bf35e6c8, type: 2}
+  - {fileID: 11400000, guid: a9661d066730e62459bc389f92a4acbd, type: 2}
+  - {fileID: 11400000, guid: 6a6dc480ff4f1a14795f07fe569ddae3, type: 2}
+  - {fileID: 11400000, guid: 4fe9127424df3ba46955508b3aa8912c, type: 2}
+  - {fileID: 11400000, guid: 1b9279ca594245b4f82e97c2872e7094, type: 2}

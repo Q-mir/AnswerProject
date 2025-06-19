@@ -213,7 +213,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 987911333}
+  - {fileID: 1341217098}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1176,6 +1176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 987911333}
   - component: {fileID: 987911334}
+  - component: {fileID: 987911335}
   m_Layer: 5
   m_Name: QuizPanel
   m_TagString: Untagged
@@ -1190,7 +1191,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987911332}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1199,7 +1200,7 @@ RectTransform:
   - {fileID: 1097825648}
   - {fileID: 569001667}
   - {fileID: 1628482728}
-  m_Father: {fileID: 165065538}
+  m_Father: {fileID: 1341217098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1218,10 +1219,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ce76238c9aa5c4a80a84cc8513a6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelTextUI: {fileID: 488200478}
-  _questionTextUI: {fileID: 1320309280}
-  _questionImage: {fileID: 1628482729}
+  _levelLabelTextUI: {fileID: 488200478}
+  _quizQuestionTextUI: {fileID: 1320309280}
+  _questionImageUI: {fileID: 1628482729}
   _answerPanel: {fileID: 1097825650}
+--- !u!114 &987911335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987911332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afaf57d410fa0141bf5136069bf93fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quizLevelConfig: {fileID: 11400000, guid: 833a32252476a1b4a9eb3a8bd44a58a2, type: 2}
+  quizPanel: {fileID: 987911334}
 --- !u!224 &1026347807 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4015131031253191926, guid: 14e106cbe367bef42847180f9553da9e, type: 3}
@@ -1441,6 +1456,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320309278}
   m_CullTransparentMesh: 1
+--- !u!1 &1341217097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341217098}
+  - component: {fileID: 1341217099}
+  m_Layer: 5
+  m_Name: EntryPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1341217098
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341217097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 987911333}
+  m_Father: {fileID: 165065538}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1341217099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341217097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afaf57d410fa0141bf5136069bf93fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quizLevelConfig: {fileID: 11400000, guid: 833a32252476a1b4a9eb3a8bd44a58a2, type: 2}
+  quizPanel: {fileID: 987911334}
 --- !u!1 &1628482727
 GameObject:
   m_ObjectHideFlags: 0

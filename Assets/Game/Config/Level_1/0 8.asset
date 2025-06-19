@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a937e5c74ba45b4d8b378fd0cd286c3, type: 3}
   m_Name: 0 8
   m_EditorClassIdentifier: 
-  <QuestionSprite>k__BackingField: {fileID: 21300000, guid: a6c2ce297969bc948a7abae5b1ebbb97, type: 3}
+  <QuestionSprite>k__BackingField: {fileID: 21300000, guid: c5d27643be4c4a542a3ce1b32086943d, type: 3}
   <QuestionText>k__BackingField: Which wonder of the world is shown in the photo?
   <Answers>k__BackingField:
-  - Great Pyramid of Giza
-  - Stonehenge
-  - Mount Everest
+  - Rio
+  - Victoria Falls
+  - Niagara Falls
